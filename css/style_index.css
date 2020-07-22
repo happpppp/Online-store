@@ -1,0 +1,58 @@
+/* 商品列表 */
+.Product .Item {
+    position     : relative;
+    float        : left;
+    border-radius: 5px;
+    margin       : 5px;
+    width        : 200px;
+    border       : 1px solid rgba(0, 0, 0, 0.1);
+    overflow     : hidden;
+}
+
+.Product .Item>img {
+    width     : 100%;
+    height    : 150px;
+    object-fit: cover;
+}
+
+.Product .Item>.info {
+    padding: 5px 10px;
+}
+
+.Product .Item>.info>div {
+    overflow     : hidden;
+    white-space  : nowrap;
+    text-overflow: ellipsis;
+}
+
+.Product .Item>.info .i {
+    color    : #666;
+    font-size: 14px;
+}
+
+.Product .Item>.info .p {
+    display    : flex;
+    align-items: center;
+    font-weight: bold;
+    margin-top : 5px;
+    color      : #FF5722;
+}
+
+.Product .Item>.info .p>button {
+    color           : white;
+    height          : 26px;
+    border-radius   : 15px;
+    background-color: #66BB6A;
+}
+
+.Product .Item>.info .p>button:active {
+    background-color: #4CAF50;
+}
+
+.Product .Item>.info .p>button i {
+    pointer-events: none;
+}
+
+.Product .Item>.info .p>div {
+    flex: 1;
+}

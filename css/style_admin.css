@@ -1,0 +1,113 @@
+/* 商品分类列表 */
+ul {
+    margin: 0px;
+}
+
+li {
+    margin-right : 10px;
+    margin-bottom: 10px;
+}
+
+li span {
+    color      : #EF5350;
+    float      : right;
+    cursor     : pointer;
+    user-select: none;
+}
+
+li.input {
+    display              : grid;
+    grid-template-columns: auto 30px;
+    gap                  : 10px;
+    margin-top           : 10px;
+}
+
+li.input>input {
+    padding         : 5px;
+    width           : 100%;
+    border          : none;
+    box-sizing      : border-box;
+    border-bottom   : 1px solid #304156;
+    background-color: transparent;
+}
+
+li.input>button {
+    height          : 30px;
+    width           : 30px;
+    line-height     : 32px;
+    border-radius   : 5px;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+li.input>button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* 商品列表 */
+.ProductList {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* 列表头 */
+.ProductList>.head {
+    font-size: 14px;
+    color    : #555;
+    padding  : 5px 10px;
+}
+
+.ProductList>.item {
+    display              : grid;
+    grid-template-columns: 50px 100px auto 100px 80px 60px;
+    padding              : 10px;
+}
+
+.ProductList>.item:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.ProductList>.item>div {
+    display      : flex;
+    align-items  : center;
+    min-width    : 0;
+
+}
+.ProductList>.item>div>div{
+    text-overflow: ellipsis;
+    white-space  : nowrap;
+    overflow     : hidden;
+}
+
+.ProductList img {
+    width        : 40px;
+    height       : 40px;
+    object-fit   : cover;
+    border-radius: 5px;
+}
+
+.ProductList .del {
+    color          : #EF5350;
+    justify-content: flex-end;
+    cursor         : pointer;
+    user-select    : none;
+}
+
+/* 添加商品 */
+
+.NewProduct {
+    display              : grid;
+    grid-template-columns: 240px auto;
+}
+
+.NewProduct>label img {
+    width           : 230px;
+    height          : 230px;
+    border-radius   : 5px;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.NewProduct>div {
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+}

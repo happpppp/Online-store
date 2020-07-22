@@ -1,0 +1,147 @@
+/* 登录页样式 */
+html,
+body {
+    padding: 0px;
+    margin : 0px;
+    height : 100%;
+}
+
+body {
+    display        : flex;
+    flex-direction : column;
+    align-items    : center;
+    justify-content: center;
+    background     : url('../img/background.jpg');
+}
+
+h1 {
+    color        : #555;
+    padding      : 30px;
+    margin-top   : 10px;
+    margin-bottom: 30px;
+    font-weight  : normal;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+#Code,
+.Form>input {
+    padding      : 10px;
+    width        : 100%;
+    box-sizing   : border-box;
+    border       : 1px solid rgba(0, 0, 0, 0.1);
+    color        : #555;
+    font-weight  : bold;
+    margin-bottom: 10px;
+}
+
+#Code:focus,
+.Form>input:focus {
+    box-shadow: 0 0 0 3px rgba(3, 168, 244, 0.15);
+}
+
+#Code::placeholder,
+.Form>input::placeholder {
+    color: #999;
+}
+
+
+
+a {
+    color          : #999;
+    text-decoration: none;
+    margin-left    : 10px;
+}
+
+.LoginWindow {
+    width           : 380px;
+    overflow        : hidden;
+    border-radius   : 5px;
+    box-shadow      : 0px 0px 50px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.Form {
+    display        : flex;
+    flex-direction : column;
+    align-items    : center;
+    justify-content: center;
+    padding        : 0px 30px;
+    margin-bottom  : 40px;
+    box-sizing     : border-box;
+    flex           : 1;
+    width          : 100%;
+    backdrop-filter: blur(6px);
+}
+
+.CodeGroup {
+    display              : grid;
+    grid-template-columns: auto 100px;
+    gap                  : 10px;
+    width                : 100%;
+    margin-bottom        : 10px;
+}
+
+.CodeGroup>input,
+.CodeGroup>button {
+    margin: 0px !important;
+}
+
+#Code {
+    flex: 1;
+}
+
+.signup {
+    display    : flex;
+    width      : 100%;
+    margin-top : 20px;
+    user-select: none;
+    color      : #999;
+    font-size  : 14px;
+}
+
+.hint {
+    align-items  : flex-start;
+    width        : 100%;
+    color        : #999;
+    font-size    : 14px;
+    margin-bottom: 2px;
+}
+
+.BtnGroup {
+    display: flex;
+    width  : 100%;
+}
+
+.BtnGroup>button {
+    flex: 1;
+}
+
+.BtnGroup>button:first-child {
+    flex        : 2;
+    margin-right: 10px;
+}
+
+button {
+    color           : white;
+    outline         : none;
+    user-select     : none;
+    margin-top      : 10px;
+    padding         : 10px;
+    border-radius   : 5px;
+    border          : none;
+    box-shadow      : 0px 0px 5px rgba(0, 0, 0, 0.1);
+    box-sizing      : border-box;
+    background-color: rgba(181, 174, 168, 0.8);
+}
+
+button:active {
+    background-color: rgba(181, 174, 168);
+}
+
+.w100 {
+    width: 100%;
+}

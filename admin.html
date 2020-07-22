@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <title>后台管理</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style_admin.css">
+    <link rel="stylesheet" href="remixicon/remixicon.css">
+</head>
+
+<body>
+    <div id="app">
+        <!-- 顶栏 -->
+        <div class="TopBar">
+            <div class="title">戏剧服装商店 - 后台管理</div>
+            <div class="flex-1"></div>
+            <div class="ToolBar">
+                <button @click="logout">退出</button>
+            </div>
+        </div>
+
+        <div class="Content Home">
+            <!-- 分类菜单 -->
+            <div class="Navigation">
+                <div class="subtitle">当前分类</div>
+                <ul>
+                    <li v-for="Item in Menu">{{Item.Type}} <span @click="delMenu" :data-id="Item.ID">删除</span></li>
+                    <!-- 新增分类输入框 -->
+                    <li class="input">
+                        <input type="text" placeholder="新增分类" v-model="Menu_New">
+                        <button @click="newMenu"><i class="ri-add-line"></i></button>
+                    </li>
+                </ul>
+            </div>
+            <!-- 内容 -->
+            <div class="Product flex-1">
+                <div class="subtitle">当前商品</div>
+                <div class="ProductList">
+                    <div class="head item">
+                        <div></div>
+                        <div>名称</div>
+                        <div>介绍</div>
+                        <div>价格</div>
+                        <div>类型</div>
+                    </div>
+
+                    <!-- 名称和介绍多嵌套了一层DIV，用于限制文字超出显示 -->
+                    <div class="item" v-for="Item in ItemList">
+                        <div><img :src="Item.Image"></div>
+                        <div><div :title="Item.Name">{{Item.Name}}</div></div>
+                        <div><div :title="Item.Introduction">{{Item.Introduction}}</div></div>
+                        <div>￥{{Item.Price}}</div>
+                        <div>{{Item.Type}}</div>
+                        <div class="del" :data-id="Item.ID" @click="delProduct">删除</div>
+                    </div>
+                </div>
+
+                <div class="subtitle">添加商品</div>
+                <div class="NewProduct">
+                    <label for="imgFile">
+                        <img src="./img/ImageSelect.svg" v-if="NewProduct_Select_Image == null">
+                        <img :src="NewProduct_Select_Image" v-else>
+                    </label>
+                    <input id="imgFile" class="hidden" type="file" accept="image/*" @change="changeImg">
+                    <div>
+                        <div class="InputGroup Margin">
+                            <span><i class="ri-price-tag-3-line"></i></span>
+                            <input type="text" placeholder="请输入商品名称" v-model="NewProduct.Name">
+                        </div>
+                        <div class="InputGroup Margin">
+                            <span><i class="ri-text"></i></span>
+                            <input type="text" placeholder="请输入商品简介" v-model="NewProduct.Introduction">
+                        </div>
+                        <div class="InputGroup Margin">
+                            <span><i class="ri-money-cny-circle-line"></i></span>
+                            <input type="number" placeholder="请输入商品价格" v-model="NewProduct.Price">
+                        </div>
+                        <div class="InputGroup Margin">
+                            <span><i class="ri-bookmark-line"></i></span>
+                            <select id="ProductTypeSelector">
+                                <option v-for="Item in Menu">{{Item.Type}}</option>
+                            </select>
+                        </div>
+                        <div class="Btn_Frame Margin">
+                            <button class="Btn_Confirm" @click="addProduct">添加商品</button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <script src="./js/vue.min.js"></script>
+    <script src="./js/config.js"></script>
+    <script src="./js/admin.js"></script>
+</body>
+
+</html>

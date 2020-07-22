@@ -1,0 +1,18 @@
+需要Wampserver64提供服务器环境
+MySQL 5.7，PHP 7.3
+
+把该目录所有文件放置服务器根目录下
+
+新建一个MySQL数据库，记住MySQL的账号密码
+进入你新建的数据库，选择导入，导入时选择localhost.sql
+
+修改php目录中的conn.php文件
+主要是修改：$dbname（数据库名），$username（数据库用户名），$password（数据库密码）
+
+修改js目录中的config.js文件
+主要是修改：Server中的服务器连接，改为'http://localhose/php'
+
+这个时候，浏览器中运行：
+http://localhose/
+
+应该就可以正常使用了

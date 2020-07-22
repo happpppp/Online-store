@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <title>戏剧服装商店</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <!-- 引入页面样式 -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style_index.css">
+    <link rel="stylesheet" href="remixicon/remixicon.css">
+</head>
+
+<body>
+    <div id="app">
+        <!-- 顶栏 -->
+        <div class="TopBar">
+            <div class="title" @click="jump" data-page="index">戏剧服装商店</div>
+            <div class="flex-1"></div>
+            <!-- 搜索栏 -->
+            <div class="InputGroup SearchBar">
+                <span><i class="ri-search-2-line"></i></span>
+                <input type="text" placeholder="搜索商品名称" @input="search">
+            </div>
+
+            <!-- 用户工具栏 -->
+            <!-- 已登录情况 -->
+            <div class="ToolBar" v-if="UserInfo != null">
+                <!-- 用户头像与昵称 -->
+                <div class="user" @click="jump" data-page="user">
+                    <img class="avatar" :src="UserInfo.Portrait">
+                    <div>{{UserInfo.UserID}}</div>
+                </div>
+
+                <button class="cart" @click="jump" data-page="user" data-opt="购物车">
+                    <i class="ri-shopping-cart-line"></i>购物车
+                </button>
+                <button @click="logout">退出</button>
+            </div>
+            <!-- 未登录情况 -->
+            <div class="ToolBar" v-else>
+                <button @click="jump" data-page="signup">注册</button>
+                <button class="login" @click="jump" data-page="login">登录</button>
+            </div>
+        </div>
+
+        <div class="Content Home">
+            <!-- 分类菜单 -->
+            <div class="Navigation">
+                <div class="Menu" v-for="Item in Menu" @click="getProduct(Item.Type)">{{Item.Type}}</div>
+            </div>
+            <!-- 内容 -->
+            <div class="Product flex-1">
+                <div class="subtitle">{{MenuActive}}</div>
+
+                <div v-if="ItemList.length != 0">
+                    <div class="Item" v-for="Item in ItemList">
+                        <!-- 商品图片:点击后跳转详情页面 -->
+                        <img :src="Item.Image" @click="jump" data-page="detail" :data-opt="Item.ID">
+                        <!-- 商品信息 -->
+                        <div class="info">
+                            <div>{{Item.Name}}</div>
+                            <div class="i">{{Item.Introduction != null ? Item.Introduction : '暂无介绍'}}</div>
+                            <div class="p">
+                                <div>{{Item.Price}}元</div>
+                                <button :data-id="Item.ID" @click="setCart">
+                                    <i class="ri-shopping-cart-line"></i>
+                                    加入购物车
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div v-else>暂无商品</div>
+            </div>
+        </div>
+
+    </div>
+    <!-- 引入vue.js -->
+    <script src="./js/vue.min.js"></script>
+    <script src="./js/config.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

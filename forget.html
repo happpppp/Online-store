@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <title>戏剧服装商店 忘记密码</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="./css/style_login.css">
+    <script src="./js/config.js"></script>
+    <script src="./js/login.js"></script>
+</head>
+
+<body>
+    <div class="LoginWindow">
+        <h1>忘记密码</h1>
+        <div class="Form">
+            <div class="hint">用户名</div>
+            <input id="Account" type="text" placeholder="请输入用户名">
+
+            <div class="hint">手机号码</div>
+            <input id="Phone" type="text" placeholder="请输入您的账号的手机号码">
+
+            <div class="hint">验证码</div>
+            <div class="CodeGroup">
+                <input id="Code" type="text" placeholder="请输入验证码">
+                <button onclick="SendCode()">发送验证码</button>
+            </div>
+
+
+            <div class="hint">新密码</div>
+            <input id="Password" type="password" placeholder="请输入新密码">
+
+            <button class="w100" onclick="forget()">重置密码</button>
+            <div class="signup"><a href="login.html">返回登录</a></div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+<!-- 点击忘记密码  然后输入手机号可以重置密码
+
+你可以在手机号框下边放一个手机验证码框   不做功能就行那个验证码框 随便输入数字  或者不输入就能通过 -->

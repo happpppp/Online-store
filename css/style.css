@@ -1,0 +1,243 @@
+/* 全局样式 */
+html,
+body {
+    margin : 0px;
+    padding: 0px;
+    height : 100%;
+}
+
+body {
+    background-color: #f2f2f2;
+    /* background   : url('../img/background.jpg'); */
+}
+
+#app {
+    height: 100%;
+}
+
+button {
+    border          : 0px;
+    background-color: transparent;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.subtitle {
+    border-left : 4px solid #304156;
+    padding-left: 5px;
+    margin      : 10px 0px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* 主容器 */
+#app {
+    display       : flex;
+    flex-direction: column;
+    align-items   : center;
+}
+
+.Content {
+    margin-top   : 60px;
+    width        : 1000px;
+    border-radius: 5px;
+    overflow     : hidden;
+}
+
+/* 输入框组 */
+
+.InputGroup {
+    display              : grid;
+    grid-template-columns: 35px auto;
+    border-radius        : 5px;
+    background-color     : rgba(0, 0, 0, 0.05);
+    overflow             : hidden;
+}
+
+.InputGroup.Margin {
+    margin-bottom: 10px;
+}
+
+.InputGroup>input,
+.InputGroup>select,
+.InputGroup>span {
+    font-size: 14px;
+    color    : #304156;
+}
+
+.InputGroup>select,
+.InputGroup>input {
+    height          : 32px;
+    padding         : 0px 10px;
+    border          : none;
+    background-color: transparent;
+    background-image: none;
+}
+
+.InputGroup>span {
+    user-select    : none;
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+    white-space    : nowrap;
+}
+
+.Btn_Frame {
+    display: flex;
+    padding: 10px;
+}
+
+.Btn_Frame.margin {
+    margin-bottom: 20px
+}
+
+.Btn_Frame>button {
+    flex         : 1;
+    padding      : 10px;
+    border-radius: 5px;
+}
+
+/* 按钮配色 */
+.Btn_Confirm {
+    display         : flex;
+    align-items     : center;
+    justify-content : center;
+    color           : white;
+    background-color: #64B5F6;
+}
+
+.Btn_Confirm:active {
+    background-color: #42A5F5;
+}
+
+.Btn_Confirm>i {
+    margin-right: 5px;
+}
+
+/* 顶栏样式 */
+.TopBar {
+    position        : fixed;
+    left            : 0px;
+    right           : 0px;
+    top             : 0px;
+    display         : flex;
+    height          : 50px;
+    align-items     : center;
+    color           : #555;
+    background-color: white;
+    box-shadow      : 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index         : 10;
+}
+
+.TopBar .title {
+    padding    : 0px 20px;
+    font-weight: bold;
+    user-select: none;
+    cursor     : pointer;
+}
+
+/* 用户工具栏 */
+.ToolBar {
+    display    : flex;
+    align-items: center;
+    padding    : 0px 20px;
+    user-select: none;
+}
+
+.ToolBar .user {
+    display    : flex;
+    align-items: center;
+    padding    : 10px;
+}
+
+.ToolBar .user:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.ToolBar .user>* {
+    pointer-events: none;
+}
+
+.ToolBar .avatar {
+    width           : 30px;
+    height          : 30px;
+    margin-right    : 5px;
+    border-radius   : 50%;
+    object-fit      : cover;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.ToolBar i {
+    margin-right  : 5px;
+    pointer-events: none;
+}
+
+.ToolBar button {
+    height          : 32px;
+    padding         : 5px 15px;
+    margin-left     : 10px;
+    border-radius   : 5px;
+    color           : white;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.ToolBar button:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.ToolBar button.login {
+    background-color: #304156d7;
+}
+
+.ToolBar button.login:hover {
+    background-color: #304156;
+}
+
+.ToolBar button.cart {
+    background-color: #66BB6A;
+}
+
+.ToolBar button.cart:hover {
+    background-color: #4CAF50;
+}
+
+/* 首页样式 */
+.Home {
+    display      : flex;
+    height       : 100%;
+    margin-bottom: 20px;
+}
+
+/* 分类菜单 */
+.Navigation {
+    user-select     : none;
+    width           : 240px;
+    padding         : 10px 0px;
+    color           : #555;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.Navigation i {
+    pointer-events: none;
+}
+
+.Navigation>.Menu {
+    font-size: 20px;
+    padding  : 10px 20px;
+}
+
+.Navigation>.Menu:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* 主内容 */
+.Product {
+    padding         : 10px;
+    clear           : both;
+    overflow-y      : auto;
+    background-color: white;
+}

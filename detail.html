@@ -1,0 +1,91 @@
+
+
+
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <title>商品详情信息</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <!-- 引入页面样式 -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style_detail.css">
+    <link rel="stylesheet" href="remixicon/remixicon.css">
+</head>
+
+<body>
+    <div id="app">
+        <!-- 顶栏 -->
+        <div class="TopBar">
+            <div class="title" @click="jump" data-page="index">戏剧服装商店</div>
+            <div class="flex-1"></div>
+            <!-- 用户工具栏 -->
+            <!-- 已登录情况 -->
+            <div class="ToolBar" v-if="UserInfo != null">
+                <!-- 用户头像与昵称 -->
+                <div class="user" @click="jump" data-page="user">
+                    <img class="avatar" :src="UserInfo.Portrait">
+                    <div>{{UserInfo.UserID}}</div>
+                </div>
+
+                <button class="cart" @click="jump" data-page="user" data-opt="购物车">
+                    <i class="ri-shopping-cart-line"></i>购物车
+                </button>
+                <button @click="logout">退出</button>
+            </div>
+            <!-- 未登录情况 -->
+            <div class="ToolBar" v-else>
+                <button @click="jump" data-page="signup">注册</button>
+                <button class="login" @click="jump" data-page="login">登录</button>
+            </div>
+        </div>
+
+
+        <div class="Content Home">
+            <!-- 内容 -->
+            <!-- 商品图片 -->
+            <div id="Booth">
+                <img :src="ItemInfo.Image">
+                <div id="Move"></div>
+            </div>
+            <div id="Magnifier">
+                <img :src="ItemInfo.Image">
+            </div>
+            <div id="Info" class="Property Info">
+                <!-- 商品信息 名称、介绍、价格-->
+                <h1>{{ItemInfo.Name}}</h1>
+                <p>{{ItemInfo.Introduction}}</p>
+                <h2>{{ItemInfo.Price}}元</h2>
+                <div class="NumControl">
+                    <i class="ri-add-circle-line" @click="num_add"></i>
+                    <span>{{ItemNum}}</span>
+                    <i class="ri-indeterminate-circle-line" @click="num_remove"></i>
+                </div>
+                <div>
+                    <!-- 加入购物车按钮 -->
+                    <button class="btn cart" @click="setCart"><i class="ri-shopping-cart-line"></i> 加入购物车</button>
+                    <!-- 收藏按钮 已收藏情况-->
+                    <button class="btn star active" title="取消收藏" @click="setFollow" v-if="Star">
+                        <i class="ri-star-fill"></i>
+                        已收藏
+                    </button>
+                    <!-- 收藏按钮 未收藏情况-->
+                    <button class="btn star" title="收藏商品" @click="setFollow" v-else>
+                        <i class="ri-star-line"></i>
+                        收藏商品
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <!-- 引入vue.js -->
+    <script src="./js/vue.min.js"></script>
+    <script src="./js/config.js"></script>
+    <script src="./js/detail.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <title>戏剧服装商店 登录</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="./css/style_login.css">
+</head>
+
+<body onload="setRemember()">
+    <div class="LoginWindow">
+        <h1>用户登录</h1>
+        <div class="Form">
+            <input id="Account" type="text" placeholder="用户名">
+            <input id="Password" type="password" placeholder="密码" onkeyup="loginEnter()">
+            <button class="w100" onclick="login()">登 陆</button>
+            <div class="signup">
+                <input type="checkbox" id="remember">
+                <label for="remember">记住账号</label>
+                <div class="flex-1"></div>
+                <a href="signup.html">注册账号</a>
+                <a href="forget.html">忘记密码</a>
+                <a href="login_admin.html">管理员</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/config.js"></script>
+    <script src="./js/login.js"></script>
+</body>
+
+</html>
